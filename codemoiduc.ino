@@ -57,7 +57,7 @@ void setup() {
 
 void loop() {
 
-  if (bluetooth.available()) {
+  if ( bluetooth.available()) {
     Serial.println("có tín hiệu");
     kytu = bluetooth.read();
     // Serial.println(kytu);
@@ -118,7 +118,7 @@ void loop() {
 
          else if ((digitalRead(R_S) == 0) && (digitalRead(L_S) == 1)) { turnLeft(); }  //if Right Sensor is White and Left Sensor is Black then it will call turn Left function
 
-        else if ((digitalRead(R_S) == 1) && (digitalRead(L_S) == 1)) { Stop(); }  //if Right Sensor and Left Sensor are at Black color then it will call Stop function
+        else if ((digitalRead(R_S) == 1) && (digitalRead(L_S) == 1)) { forword(); }  //if Right Sensor and Left Sensor are at Black color then it will call Stop function
         if (bluetooth.available()) {
           char receivedChar = bluetooth.read();
           if (receivedChar == 'x') {
